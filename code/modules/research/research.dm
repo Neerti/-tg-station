@@ -118,8 +118,8 @@ research holder datum.
 /datum/research/proc/AddDesign2Known(var/datum/design/D)
 	for(var/datum/design/known in known_designs)
 		if(D.id == known.id)
-			if(D.reliability_mod > known.reliability_mod)
-				known.reliability_mod = D.reliability_mod
+//			if(D.reliability_mod > known.reliability_mod)
+//				known.reliability_mod = D.reliability_mod
 			return
 	known_designs += D
 	return
@@ -135,8 +135,8 @@ research holder datum.
 			AddDesign2Known(PD)
 	for(var/datum/tech/T in known_tech)
 		T = Clamp(T.level, 1, 20)
-	for(var/datum/design/D in known_designs)
-		D.CalcReliability(known_tech)
+//	for(var/datum/design/D in known_designs)
+//		D.CalcReliability(known_tech)
 	return
 
 //Refreshes the levels of a given tech.
@@ -150,7 +150,7 @@ research holder datum.
 /datum/research/proc/UpdateDesign(var/path)
 	for(var/datum/design/KD in known_designs)
 		if(KD.build_path == path)
-			KD.reliability_mod += rand(1,2)
+//			KD.reliability_mod += rand(1,2)
 			break
 	return
 

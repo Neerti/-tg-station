@@ -270,7 +270,7 @@
 		if(choice == "Continue")
 			for(var/datum/design/D in temp_server.files.known_designs)
 				if(D.id == href_list["reset_design"])
-					D.reliability_mod = 0
+//					D.reliability_mod = 0
 					temp_server.files.known_designs -= D
 					break
 		temp_server.files.RefreshResearch()
