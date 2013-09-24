@@ -4,6 +4,7 @@
 *.bdb
 *.log
 *.sav
+config/admins.txt
 
 #Compiled files and other files generated during compilation.
 *.dmb
