@@ -5,6 +5,7 @@
 *.log
 *.sav
 config/admins.txt
+data/
 
 #Compiled files and other files generated during compilation.
 *.dmb
