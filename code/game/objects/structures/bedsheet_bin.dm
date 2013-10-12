@@ -92,6 +92,11 @@ LINEN BINS
 	desc = "It's a sterilized* blanket commonly used in the Medbay.  *Sterilization is voided if a virologist is present onboard the station."
 	icon_state = "sheetmedical"
 	color = "medical"
+/obj/item/weapon/bedsheet/cmo
+	name = "chief medical officer's bedsheet"
+	desc = "It's a steralized blanket that has a cross emblem.  There's some cat fur on it, likely from Runtime."
+	icon_state = "sheetcmo"
+	color = "cmo"
 
 /obj/item/weapon/bedsheet/hos
 	name = "head of security's bedsheet"
@@ -111,9 +116,15 @@ LINEN BINS
 	icon_state = "sheetce"
 	color = "chief"
 
+/obj/item/weapon/bedsheet/qm
+	name = "quartermaster's bedsheet"
+	desc = "It is decorated with a crate emblem in silver lining.  It's rather tough, and just the thing to lie on after a hard say of pushing paper."
+	icon_state = "sheetqm"
+	color = "qm"
+
 /obj/item/weapon/bedsheet/brown
 	icon_state = "sheetbrown"
-	color = "brown"
+	color = "cargo"
 
 /obj/item/weapon/bedsheet/centcom
 	name = "centcom bedsheet"
@@ -121,8 +132,23 @@ LINEN BINS
 	icon_state = "sheetcentcom"
 	color = "centcom"
 
+/obj/item/weapon/bedsheet/syndie
+	name = "syndicate bedsheet"
+	desc = "It has a syndicate emblem and it has an aura of evil."
+	icon_state = "sheetsyndie"
+	color = "syndie"
 
+/obj/item/weapon/bedsheet/cult
+	name = "cultist's bedsheet"
+	desc = "You might dream of Nar'Sie if you sleep with this.  It seems rather tattered and glows of an elderich presence."
+	icon_state = "sheetcult"
+	color = "cult"
 
+/obj/item/weapon/bedsheet/wiz
+	name = "wizard's bedsheet"
+	desc = "A special fabric enchanted with magic so you can have an enchanted night.  It even glows!"
+	icon_state = "sheetwiz"
+	color = "wiz"
 
 /obj/structure/bedsheetbin
 	name = "linen bin"
