@@ -4,7 +4,7 @@
 *.bdb
 *.log
 *.sav
-admins.txt
+config/admins.txt
 data/
 
 #Compiled files and other files generated during compilation.
