@@ -101,7 +101,6 @@
 	blood_overlay_type = "coat"
 	flags_inv = 0
 
-
 /obj/item/clothing/suit/armor/vest/det_suit
 	name = "armor"
 	desc = "An armored vest with a detective's badge on it."
@@ -193,3 +192,4 @@
 	desc = "Pukish armor."	//classy.
 	icon_state = "tdgreen"
 	item_state = "tdgreen"
+

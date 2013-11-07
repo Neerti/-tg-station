@@ -97,4 +97,19 @@
 	slowdown = 0
 	armor = list(melee = 60, bullet = 50, laser = 30,energy = 15, bomb = 30, bio = 30, rad = 30)
 
+//ERT armor
+/obj/item/clothing/head/helmet/space/ert
+	name = "emergency response team helmet"
+	desc = "A very clear but robust helmet useful for operating in a vacuum or in the event of a biohazard."
+	icon_state = "responseteam"
+	item_state = "responseteam"
+	armor = list(melee = 65, bullet = 65, laser = 65,energy = 40, bomb = 35, bio = 100, rad = 75)
 
+/obj/item/clothing/suit/space/ert
+	name = "emergency response team suit"
+	desc = "Armor designed to be light, space-worthy, protective, and signal that you're here to help.  Maybe."
+	icon_state = "responseteam"
+	item_state = "responseteam"
+	slowdown = 1
+	armor = list(melee = 65, bullet = 65, laser = 65,energy = 40, bomb = 35, bio = 100, rad = 75)
+	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/weapon/gun,/obj/item/weapon/melee/baton)

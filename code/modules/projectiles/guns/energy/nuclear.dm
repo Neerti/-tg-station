@@ -31,7 +31,11 @@
 				modifystate = "energystun"
 		update_icon()
 
-
+/obj/item/weapon/gun/energy/gun/mini
+	name = "mini energy gun"
+	desc = "A compact version of the energy gun.  It's very light and small but at the cost of a smaller battery."
+	w_class = 1
+	cell_type = "/obj/item/weapon/cell/crap" //5 shots
 
 /obj/item/weapon/gun/energy/gun/nuclear
 	name = "Advanced Energy Gun"

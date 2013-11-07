@@ -619,6 +619,11 @@ var/global/list/g_fancy_list_of_safe_types = null
 		"centcom official",
 		"centcom commander",
 		"special ops officer",
+		"emergency responser",
+		"emergency responder engineer",
+		"emergency responder medic",
+		"emergency responder security",
+		"emergency responder commander",
 		"blue wizard",
 		"red wizard",
 		"marisa wizard",
@@ -942,6 +947,158 @@ var/global/list/g_fancy_list_of_safe_types = null
 			W.access = get_all_accesses()
 			W.access += get_centcom_access("Special Ops Officer")
 			W.assignment = "Special Ops Officer"
+			W.registered_name = M.real_name
+			M.equip_to_slot_or_del(W, slot_wear_id)
+
+		if("emergency responser")
+
+			var/obj/item/device/radio/R = new /obj/item/device/radio/headset(M)
+			R.set_frequency(1441)
+			M.equip_to_slot_or_del(R, slot_ears)
+
+			M.equip_to_slot_or_del(new /obj/item/clothing/under/color/white(M), slot_w_uniform)
+			M.equip_to_slot_or_del(new /obj/item/clothing/suit/space/ert(M), slot_wear_suit)
+			M.equip_to_slot_or_del(new /obj/item/weapon/tank/oxygen(M), slot_s_store)
+			M.equip_to_slot_or_del(new /obj/item/clothing/mask/breath(M), slot_wear_mask)
+			M.equip_to_slot_or_del(new /obj/item/clothing/shoes/magboots(M), slot_shoes)
+			M.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/space/ert(M), slot_head)
+			M.equip_to_slot_or_del(new /obj/item/clothing/gloves/black(M), slot_gloves)
+			M.equip_to_slot_or_del(new /obj/item/weapon/storage/belt(M), slot_belt)
+			M.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack(M), slot_back)
+			M.equip_to_slot_or_del(new /obj/item/weapon/gun/energy/gun/mini(M), slot_in_backpack)
+
+			var/obj/item/weapon/card/id/W = new(M)
+			W.name = "[M.real_name]'s ID Card (Emergency Responder)"
+			W.icon_state = "centcom"
+			W.access = get_all_accesses()
+			W.access += get_centcom_access()//No need for another unused rank.
+			W.assignment = "Emergency Responder"
+			W.registered_name = M.real_name
+			M.equip_to_slot_or_del(W, slot_wear_id)
+
+		if("emergency responder engineer")
+
+			var/obj/item/device/radio/R = new /obj/item/device/radio/headset(M)
+			R.set_frequency(1441)
+			M.equip_to_slot_or_del(R, slot_ears)
+
+			M.equip_to_slot_or_del(new /obj/item/clothing/under/color/white(M), slot_w_uniform)
+			M.equip_to_slot_or_del(new /obj/item/clothing/suit/space/ert(M), slot_wear_suit)
+			M.equip_to_slot_or_del(new /obj/item/clothing/shoes/magboots(M), slot_shoes)
+			M.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/space/ert(M), slot_head)
+			M.equip_to_slot_or_del(new /obj/item/weapon/tank/oxygen/yellow(M), slot_s_store)
+			M.equip_to_slot_or_del(new /obj/item/clothing/mask/breath(M), slot_wear_mask)
+			M.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/utility/full(M), slot_belt)
+			M.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/industrial(M), slot_back)
+			M.equip_to_slot_or_del(new /obj/item/device/multitool(M), slot_r_store)
+			M.equip_to_slot_or_del(new /obj/item/device/t_scanner(M), slot_l_store)
+			M.equip_to_slot_or_del(new /obj/item/clothing/glasses/meson(M), slot_glasses)
+			M.equip_to_slot_or_del(new /obj/item/clothing/gloves/yellow(M), slot_gloves)
+			M.equip_to_slot_or_del(new /obj/item/device/analyzer(M), slot_in_backpack)
+			M.equip_to_slot_or_del(new /obj/item/weapon/cable_coil(M), slot_in_backpack)
+			M.equip_to_slot_or_del(new /obj/item/weapon/gun/energy/gun/mini(M), slot_in_backpack)
+
+			var/obj/item/stack/sheet/metal/ME = new(M)
+			ME.amount = 50
+			M.equip_to_slot_or_del(ME, slot_in_backpack)
+
+			var/obj/item/stack/sheet/glass/GL = new(M)
+			GL.amount = 50
+			M.equip_to_slot_or_del(GL, slot_in_backpack)
+
+			var/obj/item/weapon/rcd/RC = new(M)
+			RC.matter = 30
+			RC.desc = "A RCD. It currently holds 30/30 matter-units."  //Hacky but it works.
+			M.equip_to_slot_or_del(RC, slot_in_backpack)
+
+			var/obj/item/weapon/card/id/W = new(M)
+			W.name = "[M.real_name]'s ID Card (Emergency Responder - Engineer)"
+			W.icon_state = "centcom"
+			W.access = get_all_accesses()
+			W.access += get_centcom_access()//No need for another unused rank.
+			W.assignment = "Emergency Responder - Engineer"
+			W.registered_name = M.real_name
+			M.equip_to_slot_or_del(W, slot_wear_id)
+
+		if("emergency responder medic")
+
+			var/obj/item/device/radio/R = new /obj/item/device/radio/headset(M)
+			R.set_frequency(1441)
+			M.equip_to_slot_or_del(R, slot_ears)
+
+			M.equip_to_slot_or_del(new /obj/item/clothing/under/color/white(M), slot_w_uniform)
+			M.equip_to_slot_or_del(new /obj/item/clothing/suit/space/ert(M), slot_wear_suit)
+			M.equip_to_slot_or_del(new /obj/item/clothing/shoes/magboots(M), slot_shoes)
+			M.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/space/ert(M), slot_head)
+			M.equip_to_slot_or_del(new /obj/item/weapon/tank/oxygen(M), slot_s_store)
+			M.equip_to_slot_or_del(new /obj/item/clothing/mask/breath(M), slot_wear_mask)
+			M.equip_to_slot_or_del(new /obj/item/clothing/gloves/latex(M), slot_gloves)
+			M.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/medic(M), slot_back)
+			M.equip_to_slot_or_del(new /obj/item/clothing/glasses/hud/health(M), slot_glasses)
+			M.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/medical(M), slot_belt)
+			M.equip_to_slot_or_del(new /obj/item/weapon/reagent_containers/hypospray(M), slot_r_store)
+			M.equip_to_slot_or_del(new /obj/item/weapon/reagent_containers/glass/bottle/antitoxin(M), slot_in_backpack)
+			M.equip_to_slot_or_del(new /obj/item/weapon/gun/energy/gun/mini(M), slot_in_backpack)
+			M.equip_to_slot_or_del(new /obj/item/weapon/storage/firstaid/regular(M), slot_r_hand)
+
+			var/obj/item/weapon/card/id/W = new(M)
+			W.name = "[M.real_name]'s ID Card (Emergency Responder - Medic)"
+			W.icon_state = "centcom"
+			W.access = get_all_accesses()
+			W.access += get_centcom_access()//No need for another unused rank.
+			W.assignment = "Emergency Responder - Medic"
+			W.registered_name = M.real_name
+			M.equip_to_slot_or_del(W, slot_wear_id)
+
+		if("emergency responder security")
+
+			var/obj/item/device/radio/R = new /obj/item/device/radio/headset(M)
+			R.set_frequency(1441)
+			M.equip_to_slot_or_del(R, slot_ears)
+
+			M.equip_to_slot_or_del(new /obj/item/clothing/under/color/white(M), slot_w_uniform)
+			M.equip_to_slot_or_del(new /obj/item/clothing/suit/space/ert(M), slot_wear_suit)
+			M.equip_to_slot_or_del(new /obj/item/weapon/tank/oxygen/red(M), slot_s_store)
+			M.equip_to_slot_or_del(new /obj/item/clothing/mask/breath(M), slot_wear_mask)
+			M.equip_to_slot_or_del(new /obj/item/clothing/shoes/magboots(M), slot_shoes)
+			M.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/space/ert(M), slot_head)
+			M.equip_to_slot_or_del(new /obj/item/clothing/glasses/hud/security(M), slot_glasses)
+			M.equip_to_slot_or_del(new /obj/item/clothing/gloves/black(M), slot_gloves)
+			M.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/security(M), slot_belt)
+			M.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/security(M), slot_back)
+			M.equip_to_slot_or_del(new /obj/item/weapon/storage/box/handcuffs(M), slot_in_backpack)
+			M.equip_to_slot_or_del(new /obj/item/weapon/melee/baton/loaded(M), slot_in_backpack)
+			M.equip_to_slot_or_del(new /obj/item/weapon/gun/energy/gun(M), slot_in_backpack)
+
+			var/obj/item/weapon/card/id/W = new(M)
+			W.name = "[M.real_name]'s ID Card (Emergency Responder - Security)"
+			W.icon_state = "centcom"
+			W.access = get_all_accesses()
+			W.access += get_centcom_access()//No need for another unused rank.
+			W.assignment = "Emergency Responder - Security"
+			W.registered_name = M.real_name
+			M.equip_to_slot_or_del(W, slot_wear_id)
+
+		if("emergency responser commander")
+
+			var/obj/item/device/radio/R = new /obj/item/device/radio/headset(M)
+			R.set_frequency(1441)
+			M.equip_to_slot_or_del(R, slot_ears)
+
+			M.equip_to_slot_or_del(new /obj/item/clothing/under/color/white(M), slot_w_uniform)
+			M.equip_to_slot_or_del(new /obj/item/clothing/suit/space/ert(M), slot_wear_suit)
+			M.equip_to_slot_or_del(new /obj/item/clothing/shoes/magboots(M), slot_shoes)
+			M.equip_to_slot_or_del(new /obj/item/clothing/head/helmet/space/ert(M), slot_head)
+			M.equip_to_slot_or_del(new /obj/item/clothing/gloves/yellow(M), slot_gloves)
+			M.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/captain(M), slot_back)
+			M.equip_to_slot_or_del(new /obj/item/weapon/gun/energy/gun(M), slot_in_backpack)
+
+			var/obj/item/weapon/card/id/W = new(M)
+			W.name = "[M.real_name]'s ID Card (Emergency Responder - Commander)"
+			W.icon_state = "centcom"
+			W.access = get_all_accesses()
+			W.access += get_centcom_access()//No need for another unused rank.
+			W.assignment = "Emergency Responder - Commander"
 			W.registered_name = M.real_name
 			M.equip_to_slot_or_del(W, slot_wear_id)
 
