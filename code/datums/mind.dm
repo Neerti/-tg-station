@@ -1109,6 +1109,24 @@ datum/mind
 	//	fail |= !ticker.mode.equip_traitor(current, 1)
 		fail |= !ticker.mode.equip_revolutionary(current)
 
+	proc/make_ERT()
+		if(!(src in ticker.mode.wizards))
+			ticker.mode.wizards += src
+			special_role = "ERT Personnel"
+			assigned_role = "MODE"
+			//ticker.mode.learn_basic_spells(current)
+			if(!wizardstart.len)
+				current.loc = pick(latejoin)
+				current << "SOMETHING WENT WRONG. THE MAP DOESN'T HAVE A PROPER LANDMARK FOR YOU TO SPAWN IN. COMPLAIN TO A MAPPER!"
+			else
+				current.loc = pick(ertstart)
+
+			ticker.mode.equip_wizard(current)
+			for(var/obj/item/weapon/spellbook/S in current.contents)
+				S.op = 0
+			ticker.mode.name_wizard(current)
+			ticker.mode.forge_wizard_objectives(src)
+			ticker.mode.greet_wizard(src)
 
 /mob/proc/sync_mind()
 	mind_initialize()	//updates the mind (or creates and initializes one if one doesn't exist)

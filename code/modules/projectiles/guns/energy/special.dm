@@ -26,6 +26,45 @@
 	charge_cost = 100
 	projectile_type = "/obj/item/projectile/energy/declone"
 
+/obj/item/weapon/gun/energy/energy_rifle
+	name = "energy rifle"
+	desc = "A larger version of the energy gun, it has three modes: stun, kill, and ionize.  The battery attached allows for increased capacity."
+	icon_state = "eriflestun100"
+	item_state = null	//so the human update icon uses the icon_state instead.
+	fire_sound = 'sound/weapons/Taser.ogg'
+	origin_tech = "combat=5;magnets=4"
+	charge_cost = 65
+	projectile_type = "/obj/item/projectile/energy/electrode"
+	modifystate = "eriflestun"
+	var/mode = 0
+
+
+	attack_self(mob/living/user as mob)
+		switch(mode)
+			if(2)
+				mode = 0
+				charge_cost = 65 //15 shots
+				fire_sound = 'sound/weapons/Taser.ogg'
+				user << "\red [src.name] is now set to stun."
+				projectile_type = "/obj/item/projectile/energy/electrode"
+				modifystate = "eriflestun"
+			if(0)
+				mode = 1
+				charge_cost = 65
+				fire_sound = 'sound/weapons/Laser.ogg'
+				user << "\red [src.name] is now set to kill."
+				projectile_type = "/obj/item/projectile/beam"
+				modifystate = "eriflekill"
+			if(1)
+				mode = 2
+				charge_cost = 125 //8 shots
+				fire_sound = 'sound/weapons/emitter2.ogg'
+				user << "\red [src.name] is now set to ionize."
+				projectile_type = "/obj/item/projectile/ion"
+				modifystate = "erifleion"
+		update_icon()
+		return
+
 obj/item/weapon/gun/energy/staff
 	name = "staff of change"
 	desc = "An artefact that spits bolts of coruscating energy which cause the target's very form to reshape itself"

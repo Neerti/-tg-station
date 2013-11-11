@@ -965,7 +965,7 @@ var/global/list/g_fancy_list_of_safe_types = null
 			M.equip_to_slot_or_del(new /obj/item/clothing/gloves/black(M), slot_gloves)
 			M.equip_to_slot_or_del(new /obj/item/weapon/storage/belt(M), slot_belt)
 			M.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack(M), slot_back)
-			M.equip_to_slot_or_del(new /obj/item/weapon/gun/energy/gun/mini(M), slot_in_backpack)
+			M.equip_to_slot_or_del(new /obj/item/weapon/gun/energy/gun/mini(M), slot_r_store)
 
 			var/obj/item/weapon/card/id/W = new(M)
 			W.name = "[M.real_name]'s ID Card (Emergency Responder)"
@@ -991,12 +991,12 @@ var/global/list/g_fancy_list_of_safe_types = null
 			M.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/utility/full(M), slot_belt)
 			M.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/industrial(M), slot_back)
 			M.equip_to_slot_or_del(new /obj/item/device/multitool(M), slot_r_store)
-			M.equip_to_slot_or_del(new /obj/item/device/t_scanner(M), slot_l_store)
 			M.equip_to_slot_or_del(new /obj/item/clothing/glasses/meson(M), slot_glasses)
 			M.equip_to_slot_or_del(new /obj/item/clothing/gloves/yellow(M), slot_gloves)
 			M.equip_to_slot_or_del(new /obj/item/device/analyzer(M), slot_in_backpack)
 			M.equip_to_slot_or_del(new /obj/item/weapon/cable_coil(M), slot_in_backpack)
-			M.equip_to_slot_or_del(new /obj/item/weapon/gun/energy/gun/mini(M), slot_in_backpack)
+			M.equip_to_slot_or_del(new /obj/item/weapon/gun/energy/gun/mini(M), slot_r_store)
+			M.equip_to_slot_or_del(new /obj/item/device/t_scanner(M), slot_in_backpack)
 
 			var/obj/item/stack/sheet/metal/ME = new(M)
 			ME.amount = 50
@@ -1036,10 +1036,10 @@ var/global/list/g_fancy_list_of_safe_types = null
 			M.equip_to_slot_or_del(new /obj/item/weapon/storage/backpack/medic(M), slot_back)
 			M.equip_to_slot_or_del(new /obj/item/clothing/glasses/hud/health(M), slot_glasses)
 			M.equip_to_slot_or_del(new /obj/item/weapon/storage/belt/medical(M), slot_belt)
-			M.equip_to_slot_or_del(new /obj/item/weapon/reagent_containers/hypospray(M), slot_r_store)
+			M.equip_to_slot_or_del(new /obj/item/weapon/reagent_containers/hypospray(M), slot_l_store)
 			M.equip_to_slot_or_del(new /obj/item/weapon/reagent_containers/glass/bottle/antitoxin(M), slot_in_backpack)
-			M.equip_to_slot_or_del(new /obj/item/weapon/gun/energy/gun/mini(M), slot_in_backpack)
 			M.equip_to_slot_or_del(new /obj/item/weapon/storage/firstaid/regular(M), slot_r_hand)
+			M.equip_to_slot_or_del(new /obj/item/weapon/gun/energy/gun/mini(M), slot_r_store)
 
 			var/obj/item/weapon/card/id/W = new(M)
 			W.name = "[M.real_name]'s ID Card (Emergency Responder - Medic)"
@@ -1069,6 +1069,8 @@ var/global/list/g_fancy_list_of_safe_types = null
 			M.equip_to_slot_or_del(new /obj/item/weapon/storage/box/handcuffs(M), slot_in_backpack)
 			M.equip_to_slot_or_del(new /obj/item/weapon/melee/baton/loaded(M), slot_in_backpack)
 			M.equip_to_slot_or_del(new /obj/item/weapon/gun/energy/gun(M), slot_in_backpack)
+			M.equip_to_slot_or_del(new /obj/item/weapon/gun/energy/gun/mini(M), slot_r_store)
+			M.equip_to_slot_or_del(new /obj/item/weapon/gun/energy/energy_rifle(M), slot_r_hand)
 
 			var/obj/item/weapon/card/id/W = new(M)
 			W.name = "[M.real_name]'s ID Card (Emergency Responder - Security)"
